@@ -14,9 +14,23 @@ This repository is a code example to demostrate an EC2 instance provisioned by T
     - `tomcat-server` 
 - Post provisioning of `tomcat-server`, `remote-exec` connects to `ansible-server` via SSH and runs `ansible-playbook` usign the `tomcat-server` public IP as opposed to an inverntory file.      
 
-![TF/Ansible Workflow](/tf-workflow.png)
+![TF/Ansible Workflow](/images/tf-workflow.png)
+
+## Terraform Enterprise
+The following Terraform and Environment Variables are expected when running the example:
+
+![TF/Ansible TFE](/images/TfAnsible-TFE.png)
+
+## Expected Output
+After Ansible executes a playbook on the new EC2 instance, verify the Tomcat output by going to the following URL:
+
+`http://{tomcat-server-public_ip}:8080`
+
+where `{tomcat-server-public_ip}` is the IP address for the `tomcat-server` shown in the Terraform output.
 
 ## Caveats
-- Use of `StrictHostKeyChecking no` in the `~/.ssh/config` is for demonstration purposes only and not advised for production use.
+- Use of `StrictHostKeyChecking no` in the `~/.ssh/config` is for demonstration purposes only and not advised for production use
+- Code is expected to work with Terraform version 0.12.14 and later
+
 
 
