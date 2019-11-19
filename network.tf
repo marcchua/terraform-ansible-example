@@ -22,7 +22,7 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_route_table" "main" {
-  vpc_id = "${aws_vpc.main.id}"
+  vpc_id = aws_vpc.main.id
 
   route {
     cidr_block = "0.0.0.0/0"
@@ -38,7 +38,7 @@ resource "aws_route_table" "main" {
 resource "aws_subnet" "main" {
   cidr_block        = "10.0.0.0/24"
   vpc_id            = aws_vpc.main.id
-  availability_zone = "${element(data.aws_availability_zones.available.names, 0)}"
+  availability_zone = element(data.aws_availability_zones.available.names, 0)
   map_public_ip_on_launch = true
 
   tags = {

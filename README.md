@@ -16,7 +16,7 @@ This repository is a code example to demostrate an EC2 instance provisioned by T
 
 ![TF/Ansible Workflow](/images/tf-workflow.png)
 
-## Terraform Enterprise
+## Terraform Cloud
 The following Terraform and Environment Variables are expected when running the example:
 
 ![TF/Ansible TFE](/images/TfAnsible-TFE.png)

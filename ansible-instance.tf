@@ -8,9 +8,9 @@ data "template_file" "startup_script" {
 }
 
 resource "aws_instance" "ansible-server" {
-  ami                     = "${var.ami_id}" 
-  instance_type           = "${var.instance_type}"
-  key_name                = "${var.key_name}"
+  ami                     = var.ami_id 
+  instance_type           = var.instance_type
+  key_name                = var.key_name
   subnet_id               = aws_subnet.main.id
   vpc_security_group_ids  = [aws_security_group.main.id]
   user_data               = data.template_file.startup_script.rendered
