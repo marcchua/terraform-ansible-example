@@ -7,9 +7,14 @@ This repository is a code example to demostrate an EC2 instance provisioned by T
 - Package: tomcat9 (9.0.16-3ubuntu0.19.04.1) 
 
 ## Worflow
-- Terraform provisions the AWS Network including `aws_vpc`, `aws_internet_gateway`, `aws_route_table`, `aws_subnet`, and `aws_route_table_association`   
-
-## 
+- Terraform provisions: 
+    - AWS network including `aws_vpc`, `aws_internet_gateway`, `aws_route_table`, `aws_subnet`, and `aws_route_table_association`
+    - AWS Security Groups
+    - `ansible-server`
+    - `tomcat-server` 
+-      
 
 ## Caveats
+- Use of `StrictHostKeyChecking no` in the `~/.ssh/config` is for demonstration purposes only and not advised for production use.
+
 
