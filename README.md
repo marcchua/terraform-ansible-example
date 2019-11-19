@@ -12,7 +12,7 @@ This repository is a code example to demostrate an EC2 instance provisioned by T
     - AWS Security Groups
     - `ansible-server`
     - `tomcat-server` 
--      
+- Post provisioning of `tomcat-server`, `remote-exec` connects to `ansible-server` via SSH and runs `ansible-playbook` usign the `tomcat-server` public IP as opposed to an inverntory file.      
 
 ## Caveats
 - Use of `StrictHostKeyChecking no` in the `~/.ssh/config` is for demonstration purposes only and not advised for production use.
